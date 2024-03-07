@@ -14,17 +14,14 @@ public class SearchPageTest {
 		
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Kruti\\eclipse-workspace\\SeleniumJavaFrameWork\\executables\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("http://172.16.14.37/app/profiles/profiles.htm");
+		driver.get("https://www.google.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
-		//SearchPageObjects searchobjpage = new SearchPageObjects(driver);
-		//searchobjpage.setTextSearchBox("automation step by step");
-		//searchobjpage.clickSearchButton();
+		SearchPageObjects searchobjpage = new SearchPageObjects(driver);
+		searchobjpage.setTextSearchBox("automation step by step");
+		searchobjpage.clickSearchButton();
 		
-		Alert a = driver.switchTo().alert();
-		a.accept();
-		driver.close();
 		
 		
 	}
